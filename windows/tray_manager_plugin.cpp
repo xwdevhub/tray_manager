@@ -232,6 +232,7 @@ void TrayManagerPlugin::SetIcon(
                 GetSystemMetrics(SM_CYSMICON), LR_LOADFROMFILE));
 
   if (tray_icon_setted) {
+    DestroyIcon(nid.hIcon);
     nid.hIcon = hIcon;
     Shell_NotifyIcon(NIM_MODIFY, &nid);
   } else {
