@@ -249,7 +249,7 @@ void TrayManagerPlugin::SetIcon(
   niif.hWnd = nid.hWnd;
   niif.uID = nid.uID;
   niif.guidItem = GUID_NULL;
-
+  DestroyIcon(hIcon);
   tray_icon_setted = true;
 
   result->Success(flutter::EncodableValue(true));
